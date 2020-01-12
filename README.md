@@ -21,7 +21,7 @@ Output: [3,2,1]
 
 Note that node 75 doesn't have left child and node 29 doesn't have right child.
 
-The inorder traversal for above binary tree will be **[21, 20, 35, 30, 75, 67, 50, 29, 60, 65, 24, 43, 70]**
+The postorder traversal for above binary tree will be **[21, 20, 35, 30, 75, 67, 50, 29, 60, 65, 24, 43, 70]**
 
 ## Implementation :
 
@@ -32,21 +32,21 @@ import java.util.List;
 public class App {
 
      public static void main(String[] args) {
-		   TreeNode root = new TreeNode(70);
-		   root.left = new TreeNode(67); root.right = new TreeNode(43);
+	   TreeNode root = new TreeNode(70);
+           root.left = new TreeNode(67); root.right = new TreeNode(43);
 		
-	     root.left.left = new TreeNode(35); root.left.right = new TreeNode(75); 
+	   root.left.left = new TreeNode(35); root.left.right = new TreeNode(75); 
 		
-		   root.left.left.left = new TreeNode(21); root.left.left.right = new TreeNode(20);
+           root.left.left.left = new TreeNode(21); root.left.left.right = new TreeNode(20);
 		
-		   root.left.right.right = new TreeNode(30);
+           root.left.right.right = new TreeNode(30);
 		
-		   root.right.left = new TreeNode(29); root.right.left.left = new TreeNode(50);
+           root.right.left = new TreeNode(29); root.right.left.left = new TreeNode(50);
 		
-		   root.right.right = new TreeNode(24); 
+           root.right.right = new TreeNode(24); 
 		
-		   root.right.right.left = new TreeNode(60); root.right.right.right = new TreeNode(65);
-		   System.out.println(inorderTraversal(root));
+	   root.right.right.left = new TreeNode(60); root.right.right.right = new TreeNode(65);
+           System.out.println(inorderTraversal(root));
      }
 	
 	
