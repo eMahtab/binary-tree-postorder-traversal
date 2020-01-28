@@ -23,7 +23,7 @@ Note that node 75 doesn't have left child and node 29 doesn't have right child.
 
 The postorder traversal for above binary tree will be **[21, 20, 35, 30, 75, 67, 50, 29, 60, 65, 24, 43, 70]**
 
-## Implementation :
+## Implementation : Recursive
 
 ```java
 import java.util.ArrayList;
@@ -74,4 +74,26 @@ public class App {
      }
 }
 
+```
+## Implementation : Iterative
+
+```java
+public List<Integer> postorderTraversal(TreeNode root) {
+      List<Integer> res = new ArrayList<>();
+      if(root == null)
+          return res;
+      Stack<TreeNode> stack = new Stack<TreeNode>();
+      stack.push(root);
+      while(!stack.isEmpty()){
+          TreeNode current = stack.pop();
+          res.add(0,current.val);
+          if(current.left != null){
+              stack.push(current.left);
+          }
+          if(current.right != null){
+              stack.push(current.right);
+          }
+      }  
+   return res;  
+}
 ```
