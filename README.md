@@ -124,3 +124,7 @@ public List<Integer> postorderTraversal(TreeNode root) {
       return res;  
 }
 ```
+
+# References :
+1. https://www.youtube.com/watch?v=sMI4RBEZyZ4
+2. https://www.techiedelight.com/postorder-tree-traversal-iterative-recursive
