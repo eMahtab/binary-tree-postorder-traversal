@@ -75,7 +75,7 @@ public class App {
 }
 
 ```
-## Implementation : Iterative
+## Implementation : Iterative (One Stack)
 
 ```java
 public List<Integer> postorderTraversal(TreeNode root) {
@@ -95,5 +95,32 @@ public List<Integer> postorderTraversal(TreeNode root) {
           }
       }  
    return res;  
+}
+```
+
+## Implementation : Iterative (Two Stack)
+
+```java
+public List<Integer> postorderTraversal(TreeNode root) {
+      List<Integer> res = new ArrayList<>();
+      if(root == null)
+          return res;
+      Stack<TreeNode> stack = new Stack<TreeNode>();
+      Stack<Integer> values = new Stack<>();  
+      stack.push(root);
+      while(!stack.isEmpty()){
+          TreeNode current = stack.pop();
+          values.push(current.val); 
+          if(current.left != null){
+              stack.push(current.left);
+          }
+          if(current.right != null){
+              stack.push(current.right);
+          }
+      } 
+      while(!values.isEmpty()){
+          res.add(values.pop());
+      }
+      return res;  
 }
 ```
