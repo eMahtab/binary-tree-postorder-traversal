@@ -97,6 +97,37 @@ public List<Integer> postorderTraversal(TreeNode root) {
    return res;  
 }
 ```
+#################################### OR ##############################
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> postorder = new ArrayList<>();
+        if(root == null)
+            return postorder;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while(!stack.isEmpty()) {
+            TreeNode current = stack.pop();
+            postorder.add(current.val);
+            if(current.left != null)
+                stack.push(current.left);
+            if(current.right != null)
+                stack.push(current.right);
+        }
+        Collections.reverse(postorder);
+        return postorder;
+    }
+}
+```
 
 ## Implementation : Iterative (Two Stack)
 
